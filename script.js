@@ -25,20 +25,20 @@ $(document).ready(function() { // We want our code to execute only after the DOM
 
             var dataHour = parseInt($(this).attr("data-hour"));
 
-            if(dataHour < currentHour) {          
+            if(dataHour < currentHour) { // If hour is in the past   
                 
                 $(this).removeClass("future");
                 $(this).removeClass("present");
                 $(this).addClass("past"); // Bear in mind that this styling will be applied to the entire time block row. However, we have also specified styling for the hour and save button elements to give the desired appearance
                                    
-            } else if(dataHour == currentHour) {
+            } else if(dataHour == currentHour) { // If hour is in the present
                                 
                 $(this).removeClass("future");
                 $(this).removeClass("past");
                 $(this).addClass("present");
                 console.log("present");        
         
-            } else if(dataHour > currentHour) {
+            } else if(dataHour > currentHour) { // If hour is in the future
                                                 
                 $(this).removeClass("present");
                 $(this).removeClass("past");
@@ -48,5 +48,10 @@ $(document).ready(function() { // We want our code to execute only after the DOM
             }    
         });
     }
+
+    updateHourlyColour(); // Call the function
+
+    
+
 
 });
