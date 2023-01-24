@@ -58,7 +58,6 @@ textarea {
 }
 
 .saveBtn {
-  border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
@@ -68,4 +67,22 @@ textarea {
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+  color: black;
+}
+
+button { /* Added this selector to get rid of default button properties and center the icon */
+  display: flex;
+  border: none; /*To get rid of default border*/
+  border-left: 2px solid black;
+  align-items: center;
+  justify-content: center;
+}
+
+#clear {  
+  padding: 20px;
+}
+
+#clear-button {
+  display: flex;
+  justify-content: center;
 }

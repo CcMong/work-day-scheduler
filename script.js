@@ -36,15 +36,13 @@ $(document).ready(function() { // We want our code to execute only after the DOM
                 $(this).removeClass("future");
                 $(this).removeClass("past");
                 $(this).addClass("present");
-                console.log("present");        
-        
+                
             } else if(dataHour > currentHour) { // If hour is in the future
                                                 
                 $(this).removeClass("present");
                 $(this).removeClass("past");
                 $(this).addClass("future");
-                console.log("future");              
-                
+                                
             }    
         });
     }
