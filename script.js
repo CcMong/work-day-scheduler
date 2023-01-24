@@ -70,4 +70,22 @@ $(document).ready(function() { // We want our code to execute only after the DOM
     })
 
 
+    /*4. Loading Saved Data from Local Storage onto the Webpage
+    ============================================================*/
+
+    // Up to this point, the entries made by the user will be saved in local storage by the key (which will be the "data-hour" attribute value) and the identifier (which will be the actual journal entry).
+
+    // However, we want to ensure that the entries persist even after the page is refreshed. Which means displaying the user entry by loading the saved data from local storage into the textarea element within the respective time slots
+    
+    $("#entry-9").val(localStorage.getItem("9"));
+    $("#entry-10").val(localStorage.getItem("10"));
+    $("#entry-11").val(localStorage.getItem("11"));
+    $("#entry-12").val(localStorage.getItem("12"));
+    $("#entry-13").val(localStorage.getItem("13"));
+    $("#entry-14").val(localStorage.getItem("14"));
+    $("#entry-15").val(localStorage.getItem("15"));
+    $("#entry-16").val(localStorage.getItem("16"));
+    $("#entry-17").val(localStorage.getItem("17")); 
+
+
 });
