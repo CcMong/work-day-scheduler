@@ -12,7 +12,7 @@ $(document).ready(function() { // We want our code to execute only after the DOM
     /* 2. Colour-coding the Event Entry Area
     =========================================*/
 
-    // The data-hour attribute has been set for each time block. It is basically equivalent to the hour, in 24-hour format. It will allow us to access the hour numbers directly, which we won't be able to do with an id.
+    // The data-hour attribute has been set for each time block. It is basically equivalent to the hour, in 24-hour format. It will allow us to access the hour numbers directly, which we wouldn't be able to do with an id without further manipulation.
 
     // Now, we will get that attribute out and compare it to the current time (in 24-hour format). If it is less (ie. in the past), we'll switch on the .past class. If equal (ie. current), the .present class. And if greater than (ie. in the future), the .future class.
    
@@ -87,5 +87,20 @@ $(document).ready(function() { // We want our code to execute only after the DOM
     $("#entry-16").val(localStorage.getItem("16"));
     $("#entry-17").val(localStorage.getItem("17")); 
 
+
+    /*5. Button to Clear All Entries
+    =================================*/
+
+    // The user can clear all entries at once via a "Clear All" button, if they so wish 
+
+    // Add a click event listener to the "Clear All" button
+
+    $("#clear").on("click", function() {
+
+        localStorage.clear(); // To clear the saved data in local storage
+
+        location.reload(); // To refresh the page
+
+    });
 
 });
