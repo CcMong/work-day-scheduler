@@ -51,7 +51,23 @@ $(document).ready(function() { // We want our code to execute only after the DOM
 
     updateHourlyColour(); // Call the function
 
+
+    /*3. Saving entered events to Local Storage
+    ============================================*/
     
+    //A complicated data structure is unnecessary as all this needs is the capability to store the entries as they are written - they are already in string form. And a new event can simply overwrite a current one for each time block, which is how local storage works anyway.
+
+    // Add a click event listener to the "Save" button within each time block, and this should save the user's entry into local storage
+
+    $(".saveBtn").on("click", function() {
+
+        var schedulerEntry = $(this).siblings(".description").val(); // This is the event content that is input by the user, targeted by querying the textarea element via its class and sibling relationship with the "Save" button. 
+
+        var schedulerHour = $(this).parent().attr("data-hour");
+
+        localStorage.setItem(schedulerHour, schedulerEntry);
+
+    })
 
 
 });
